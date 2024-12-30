@@ -45,11 +45,26 @@ brew install openssh
 brew install screen
 brew install gmp
 
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+# Install tools.
+brew install ansible
+brew install autoconf
+brew install awscli
+brew install azure-cli
+brew install flux
+brew install grep
+brew install k9s
+brew install kubernetes-cli
+brew install packer
+brew install pyenv
+brew install python-packaging
+brew install python@3.12
+brew install python@3.13
+brew install redis
+brwew install rsync
+brew install stow
+brew install telnet
+brew install tfenv
+brew install tfswitch
 
 # Install other useful binaries.
 brew install git
