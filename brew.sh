@@ -60,7 +60,7 @@ brew install python-packaging
 brew install python@3.12
 brew install python@3.13
 brew install redis
-brwew install rsync
+brew install rsync
 brew install stow
 brew install telnet
 brew install tfenv
