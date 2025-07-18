@@ -12,3 +12,12 @@ When setting up a new Mac, you may want to install some common [Homebrew](https:
 ```bash
 ./brew.sh
 ```
+
+### Setting Oh My Zsh Installer with Plugins
+
+```bash
+./install_oh_my_zsh.sh [yes|no]
+```
+
+yes: Install Zsh and set it as the default shell.
+no (default): Install Zsh without changing the default shell.
