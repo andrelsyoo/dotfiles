@@ -6,7 +6,7 @@ alias python3="/opt/homebrew/Cellar/python@3.12/3.12.7_1/bin/python3.12"
 export PATH=/opt/homebrew/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/aluisdossantos/.oh-my-zsh"
+export ZSH="/Users/andrels/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
