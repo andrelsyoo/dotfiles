@@ -81,7 +81,7 @@ macos
 sudo
 kubectl
 helm
-#zsh-completions
+zsh-completions
 zsh-syntax-highlighting
 )
 
