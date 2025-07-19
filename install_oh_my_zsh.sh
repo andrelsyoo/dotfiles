@@ -78,5 +78,3 @@ log "Applying changes..."
 zsh -c "source ~/.zshrc"
 
 log "Oh My Zsh installation completed with autosuggestions and syntax highlighting enabled!"
-
-test
