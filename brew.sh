@@ -66,6 +66,7 @@ brew install stow
 brew install telnet
 brew install tfenv
 brew install tfswitch
+brew install --cask sublime-text
 
 # Install other useful binaries.
 brew install git
