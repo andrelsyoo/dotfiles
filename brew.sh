@@ -50,6 +50,7 @@ brew install ansible
 brew install autoconf
 brew install awscli
 brew install azure-cli
+brew install docker-credential-helper
 brew install flux
 brew install grep
 brew install k9s
@@ -62,12 +63,11 @@ brew install node
 brew install redis
 brew install rsync
 brew install stow
+brew install --cask sublime-text
 brew install telnet
 brew install tfenv
 brew install tfswitch
-brew install --cask sublime-text
 brew install helm
-brew install docker-credential-helper
 brew install yq 
 
 # Install other useful binaries.
