@@ -67,6 +67,8 @@ brew install tfenv
 brew install tfswitch
 brew install --cask sublime-text
 brew install helm
+brew install docker-credential-helper
+brew install yq 
 
 # Install other useful binaries.
 brew install git
