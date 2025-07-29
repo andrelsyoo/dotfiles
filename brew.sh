@@ -64,6 +64,7 @@ brew install redis
 brew install rsync
 brew install stow
 brew install --cask sublime-text
+brew install --cask slack
 brew install telnet
 brew install tfenv
 brew install tfswitch
