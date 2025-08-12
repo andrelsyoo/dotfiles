@@ -45,6 +45,9 @@ brew install openssh
 brew install screen
 brew install gmp
 
+# Install password manager.
+brew install --cask 1password
+
 # Install tools.
 brew install ansible
 brew install autoconf
