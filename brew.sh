@@ -52,6 +52,7 @@ brew install --cask 1password
 brew install ansible
 brew install autoconf
 brew install awscli
+brew install argocd
 brew install azure-cli
 brew install docker-credential-helper
 brew install flux
