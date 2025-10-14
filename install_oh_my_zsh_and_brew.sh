@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Exit on error
 set -e
 
@@ -13,6 +12,25 @@ MAKE_DEFAULT_SHELL="${1:-no}"
 
 # Display the selected option
 log "Make Zsh default shell: $MAKE_DEFAULT_SHELL"
+
+# Install Homebrew if not installed
+if ! command -v brew &>/dev/null; then
+    log "Homebrew not found. Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Add Homebrew to PATH for the current session
+    if [[ -f "/opt/homebrew/bin/brew" ]]; then
+        # Apple Silicon Mac
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    elif [[ -f "/usr/local/bin/brew" ]]; then
+        # Intel Mac
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
+
+    log "Homebrew installed successfully."
+else
+    log "Homebrew is already installed."
+fi
 
 # Install Zsh (if not installed)
 if ! command -v zsh &>/dev/null; then
@@ -37,7 +55,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
     log "Oh My Zsh is already installed at $HOME/.oh-my-zsh. Skipping."
 else
     log "Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 # Set Zsh as the default shell if requested
