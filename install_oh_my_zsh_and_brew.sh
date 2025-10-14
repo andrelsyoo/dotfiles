@@ -82,17 +82,52 @@ else
     log "Zsh syntax highlighting already installed. Skipping."
 fi
 
+# Install Zsh completions
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-completions" ]; then
+    log "Installing Zsh completions..."
+    git clone https://github.com/zsh-users/zsh-completions "$HOME/.oh-my-zsh/custom/plugins/zsh-completions"
+else
+    log "Zsh completions already installed. Skipping."
+fi
+
+# Get the real path of .zshrc (follows symlinks)
+ZSHRC_PATH="$HOME/.zshrc"
+if [ -L "$ZSHRC_PATH" ]; then
+    ZSHRC_REAL_PATH=$(readlink "$ZSHRC_PATH")
+    # Handle relative symlinks
+    if [[ "$ZSHRC_REAL_PATH" != /* ]]; then
+        ZSHRC_REAL_PATH="$HOME/$ZSHRC_REAL_PATH"
+    fi
+    log "Detected .zshrc is a symlink pointing to: $ZSHRC_REAL_PATH"
+else
+    ZSHRC_REAL_PATH="$ZSHRC_PATH"
+fi
+
 # Configure plugins in .zshrc
 log "Configuring Zsh plugins in .zshrc..."
-if ! grep -q "zsh-autosuggestions" ~/.zshrc; then
-    sed -i '' 's/plugins=(.*)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+if ! grep -q "zsh-autosuggestions" "$ZSHRC_REAL_PATH"; then
+    sed -i.bak 's/plugins=(.*)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)/' "$ZSHRC_REAL_PATH"
+    rm "${ZSHRC_REAL_PATH}.bak"
     log "Updated plugins in .zshrc."
 else
     log "Plugins already configured in .zshrc."
+fi
+
+# Add fpath for zsh-completions (required for it to work properly)
+if ! grep -q "fpath+=\${ZSH_CUSTOM:-\${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src" "$ZSHRC_REAL_PATH"; then
+    log "Adding fpath configuration for zsh-completions..."
+    # Insert before Oh My Zsh is sourced
+    sed -i.bak '/^source \$ZSH\/oh-my-zsh.sh/i\
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+' "$ZSHRC_REAL_PATH"
+    rm "${ZSHRC_REAL_PATH}.bak"
+    log "Added fpath configuration."
+else
+    log "fpath already configured for zsh-completions."
 fi
 
 # Apply the changes (reload .zshrc)
 log "Applying changes..."
 zsh -c "source ~/.zshrc"
 
-log "Oh My Zsh installation completed with autosuggestions and syntax highlighting enabled!"
+log "Oh My Zsh installation completed with autosuggestions, syntax highlighting, and completions enabled!"
