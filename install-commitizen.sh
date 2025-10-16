@@ -3,12 +3,15 @@
 # Install Commitizen globally (it needs node which are on brew.sh)
 npm install -g commitizen
 
-# Initialize Commitizen in current project
-commitizen init cz-conventional-changelog --save-dev --save-exact
+# Install the conventional changelog adapter globally
+npm install -g cz-conventional-changelog
+
+# Create global Commitizen config
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 # Verify installation
 echo "Verifying installation..."
 cz --version
 
-echo "✅ Commitizen installed successfully!"
-echo "Use 'git cz' or 'cz' to commit with commitizen"
+echo "✅ Commitizen installed and configured globally!"
+echo "Now you can use 'git cz' or 'cz' in any Git repository"
