@@ -77,7 +77,8 @@ brew install telnet
 brew install tfenv
 brew install tfswitch
 brew install helm
-brew install yq 
+brew install yq
+brew install --cask windows-app
 
 # Install other useful binaries.
 brew install git
