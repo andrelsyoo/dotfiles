@@ -55,6 +55,7 @@ brew install autoconf
 brew install awscli
 brew install argocd
 brew install azure-cli
+brew install --cask claude
 brew install docker-credential-helper
 brew install flux
 brew install warrensbox/tap/tfswitch
