@@ -80,6 +80,7 @@ brew install tfswitch
 brew install helm
 brew install yq
 brew install --cask windows-app
+brew install --cask remote-desktop-manager
 
 # Install other useful binaries.
 brew install git
