@@ -1,13 +1,17 @@
 # Compiled Python files
 *.pyc
 
-# Folder view configuration files
-.DS_Store
-Desktop.ini
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Thumbnail cache files
-._*
+# OS
+.DS_Store
 Thumbs.db
+._*
 
 # Files that might appear on external disks
 .Spotlight-V100

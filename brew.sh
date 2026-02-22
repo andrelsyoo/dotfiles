@@ -67,6 +67,7 @@ brew install pyenv
 brew install python-packaging
 brew install python@3.12
 brew install python@3.13
+brew install podman
 brew install node
 brew install kustomize
 brew install redis

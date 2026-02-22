@@ -1,6 +1,6 @@
 #Python
 #export PATH="/opt/homebrew/Cellar/python@3.12/3.12.7_1/bin:$PATH"
-alias python3="/opt/homebrew/Cellar/python@3.12/3.12.7_1/bin/python3.12"
+#alias python3="/opt/homebrew/Cellar/python@3.12/3.12.7_1/bin/python3.12"
 #alias python3="/opt/homebrew/Cellar/python@3.11/3.11.10/bin/python3.11"
 
 export PATH=/opt/homebrew/bin:$PATH
