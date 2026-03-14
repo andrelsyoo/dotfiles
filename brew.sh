@@ -78,6 +78,7 @@ brew install --cask slack
 brew install telnet
 brew install tfenv
 brew install tfswitch
+brew install talosctl
 brew install helm
 brew install yq
 brew install --cask windows-app
