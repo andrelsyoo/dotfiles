@@ -60,7 +60,6 @@ brew install docker-credential-helper
 brew install flux
 brew install warrensbox/tap/tfswitch
 brew install grep
-brew install --cask intellij-idea-ce
 brew install k9s
 brew install kubernetes-cli
 brew install pyenv
