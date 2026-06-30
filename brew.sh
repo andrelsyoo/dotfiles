@@ -49,13 +49,16 @@ brew install gmp
 # Install password manager.
 brew install --cask 1password
 
-# Install tools.
+# AI 
+brew install --cask claude
+brew install rtk
+
+# Install general tools.
 brew install ansible
 brew install autoconf
 brew install awscli
 brew install argocd
 brew install azure-cli
-brew install --cask claude
 brew install docker-credential-helper
 brew install flux
 brew install warrensbox/tap/tfswitch
