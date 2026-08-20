@@ -89,6 +89,7 @@ brew install --cask windows-app
 brew install --cask remote-desktop-manager
 brew install opentofu
 brew install --cask visual-studio-code
+brew install --cask obsidian
 
 # Install other useful binaries.
 brew install git
