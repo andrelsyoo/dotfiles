@@ -1,0 +1,20 @@
+# Paths stow must NOT symlink into ~ when running `stow .` from this repo.
+# Defining this file replaces stow's built-in defaults, so the usual
+# VCS/editor entries are repeated here.
+
+# Setup scripts and docs — run them, don't symlink them
+^/macos$
+^/linux$
+^/README\.md$
+
+# VCS and tooling
+^/\.git$
+\.gitignore
+^/\.github$
+^/\.idea$
+^/\.vscode$
+
+# Editor / OS cruft
+.+~
+\.sw[op]$
+\.DS_Store$
